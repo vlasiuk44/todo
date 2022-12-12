@@ -1,0 +1,106 @@
+.header {
+  margin: 0 50% 0 0;
+  margin-bottom: 50px;
+  background-color: White;
+  border: solid 2px black;
+  font-family: monospace;
+  font-size: 30px;
+  color: black;
+}
+.header_input {
+
+  width: 300px;
+  height: 25px;
+  margin-right: 5px;
+  border: 2px solid black;
+  background-color: inherit;
+  color: black;
+  font-family: monospace;
+}
+.header_btn {
+  height: 30px;
+  border: 2px solid black;
+  outline: none;
+  background-color: inherit;
+  color: black;
+  font-family: monospace;
+  font-weight: bold;
+  cursor: pointer;
+}
+.container-one {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.container-two {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+li {
+  list-style-type: none;
+}
+.todo-block {
+  padding: 0 50% 0 0;
+  margin-bottom: 30px;
+  font-family: monospace;
+  font-size: 24px;
+}
+.todo-list {
+  padding: 0 60% 0 25%;
+  margin-bottom: 20px;
+}
+.todo-list-item {
+  margin-bottom: 20px;
+}
+.todo-list-item:last-child {
+  margin-bottom: 0;
+}
+.todo-wrapper {
+  display: flex;
+  align-items: center;
+}
+.checkbox {
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  border: 2px solid black;
+}
+.checkbox-checked {
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  border: 2px solid black;
+}
+.checkbox-checked::before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 21px;
+  height: 21px;
+  background-image: url('ok.svg');
+}
+.todo-text {
+  font-family: monospace;
+  font-size: 18px;
+}
+.done-text {
+  text-decoration: line-through;
+}
+.todo-btn {
+  height: 30px;
+  border: 2px solid black;
+  outline: none;
+  background-color: inherit;
+  color: black;
+  font-family: 'monospace;
+  font-weight: bold;
+  cursor: pointer;
+}
+body {
+  margin: 0;
+  padding: 0;
+}

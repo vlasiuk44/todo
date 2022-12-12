@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ToDo List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div id="app">
+    <div class="header">
+      <div class="container-one">
+        <div class="header__title">Enter your task:</div>
+        <div class="container-one">
+          <input class="header_input"
+            type="text"
+            v-bind:value="valueInput"
+            v-on:input="handleInput"
+            v-on:keypress.enter="addTask"
+          >
+          <button class="header_btn" v-on:click="addTask">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="todo-block">
+      <div class="container-one">
+        <span>ToDo</span>
+        <span class="mask-num">{{ needDoList.length }}</span>
+      </div>
+    </div>
+    <ul class="todo-list">
+      <li class="todo-list-item"
+        v-for="(mask, index) in needDoList"
+        :key="mask.id"
+      >
+        <div class="container-two">
+          <div class="todo-wrapper">
+            <input class="checkbox" type="checkbox" v-on:change="doCheck(index, 'need')"/>
+            <span class="todo-text">{{ mask.title }}</span>
+          </div>
+          <button class="todo-btn" v-on:click="removeMask(index, 'need')">Delete</button>
+        </div>
+      </li>
+    </ul>
+    <div class="todo-block">
+      <div class="container-one">
+        <span>Ready</span>
+        <span class="mask-num">{{ completeList.length }}</span>
+      </div>
+    </div>
+    <ul class="todo-list">
+      <li class="todo-list-item"
+        v-for="(mask, index) in completeList"
+        :key="mask.id"
+      >
+        <div class="container-two">
+          <div class="todo-wrapper">
+            <input class="checkbox-checked" type="checkbox" v-on:change="doCheck(index, 'complete')" checked>
+            <span class="todo-text done-text">{{ mask.title }}</span>
+          </div>
+          <button class="todo-btn" v-on:click="removeMask(index, 'complete')">Delete</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
